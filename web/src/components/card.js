@@ -8,6 +8,7 @@ const Card = (props) => {
         <h1 className="f3 mb2">{props.title}</h1>
         <h2 className="f5 fw4 gray mt0">{props.description}</h2>
       </div>
+      {props.children}
     </article>
   )
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
 import Widgets from './pages/index'
 import WidgetForm from './pages/form'
@@ -24,8 +24,10 @@ class App extends Component {
           <main className="pa4">
             <Route exact path="/" component={Widgets} />
             <Route path="/new" component={WidgetForm} />
-            <Route path="/widgets/:id" component={WidgetShow} />
-
+            <Switch>
+              <Route path="/widgets/:id/edit" component={WidgetForm} />
+              <Route path="/widgets/:id" component={WidgetShow} />
+            </Switch>
           </main>
         </div>
       </BrowserRouter>
