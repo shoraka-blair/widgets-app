@@ -1,3 +1,22 @@
 {
-  "widgets": []
+  "widgets": [
+    {
+      "name": "Cleat",
+      "cost": "25.00",
+      "year": "2014",
+      "id": 1
+    },
+    {
+      "name": "air pump",
+      "cost": "30.00",
+      "year": "2014",
+      "id": 2
+    },
+    {
+      "name": "Boat Part 1000",
+      "cost": "1000.00",
+      "year": "1942",
+      "id": 3
+    }
+  ]
 }
