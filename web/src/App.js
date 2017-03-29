@@ -3,6 +3,10 @@ import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 import Widgets from './pages/index'
 import WidgetForm from './pages/form'
+import WidgetShow from './pages/show'
+
+import { connect } from 'react-redux'
+import { path } from 'ramda'
 
 class App extends Component {
   render() {
@@ -10,7 +14,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <header className="pa4 bg-blue white-60">
-            <h1>Boat Parts Shop</h1>
+            <h1>Boat Parts Shop - {this.props.count || null}</h1>
             <nav>
               <Link className="white" to="/">Widgets</Link>
               |
@@ -20,6 +24,7 @@ class App extends Component {
           <main className="pa4">
             <Route exact path="/" component={Widgets} />
             <Route path="/new" component={WidgetForm} />
+            <Route path="/widgets/:id" component={WidgetShow} />
 
           </main>
         </div>
@@ -28,4 +33,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const connector = connect(state => {
+  return {
+    count: path(['widgets','length'], state)
+  }
+})
+
+export default connector(App)

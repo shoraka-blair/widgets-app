@@ -8,8 +8,20 @@ const initialWidget = {
   year: ''
 }
 
+const widgets = (state=[], action) => {
+  switch (action.type) {
+    case 'LOAD_WIDGETS':
+      return action.payload
+    default:
+      return state
+  }
+}
+
+
 const widget = (state=initialWidget, action) => {
   switch (action.type) {
+    case 'SET_WIDGET':
+      return action.payload
     case 'SET_WIDGET_NAME':
       return set(lensProp('name'), action.payload, state)
     case 'SET_WIDGET_COST':
@@ -25,7 +37,8 @@ const widget = (state=initialWidget, action) => {
 
 const store = createStore(
   combineReducers({
-    widget: widget
+    widget: widget,
+    widgets: widgets
   })
 )
 
