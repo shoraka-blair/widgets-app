@@ -1,1 +1,18 @@
-{ "widgets": [] }
+{
+  "widgets": [
+    {
+      "name": "Blockchain",
+      "description": "Blockchain from bitcoin",
+      "year": "2012",
+      "author": "Yamoto Suzzuki",
+      "id": 1
+    },
+    {
+      "name": "Cloud",
+      "description": "Another word for the internet",
+      "year": "2006",
+      "author": "Unknown",
+      "id": 2
+    }
+  ]
+}
