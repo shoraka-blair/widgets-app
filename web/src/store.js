@@ -1,5 +1,5 @@
-import { createStore, combineReducers } from 'redux'
-
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import ReduxThunk from 'redux-thunk'
 import { set, lensProp } from 'ramda'
 
 const initialWidget = {
@@ -39,7 +39,8 @@ const store = createStore(
   combineReducers({
     widget: widget,
     widgets: widgets
-  })
+  }),
+  applyMiddleware(ReduxThunk)
 )
 
 export default store

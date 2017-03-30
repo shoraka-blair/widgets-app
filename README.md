@@ -24,3 +24,9 @@ This should start the web app on 3000 and the api app on 5000
 * Lets create a show Widget Page
 * Lets create a edit Widget Page
 * Lets remove a widget
+
+## Practice 2
+
+* Move action creators to a separate file
+* Use Redux Thunk
+* Create an async widget library

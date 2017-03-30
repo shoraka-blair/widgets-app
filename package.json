@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "foreman": "^2.0.0"
+  },
+  "dependencies": {
+    "redux-thunk": "^2.2.0"
   }
 }
