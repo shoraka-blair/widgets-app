@@ -13,4 +13,23 @@ const post = (buzzword) => fetch(`${url}/widgets`, {
 
 const all = () => fetch(`${url}/widgets`).then(res => res.json())
 
-export { post, all }
+const get = (id) => fetch(`${url}/widgets/${id}`).then(res => res.json())
+
+const put = (buzzword) => fetch(`${url}/widgets/${buzzword.id}`, {
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  method: 'put',
+  body: JSON.stringify(buzzword)
+}).then(res => res.json())
+
+const remove = (buzzword) => fetch(`${url}/widgets/${buzzword.id}`, {
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  method: 'delete',
+  body: JSON.stringify(buzzword)
+}).then(res => res.json())
+
+
+export { post, all, get, put, remove}

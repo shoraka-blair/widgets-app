@@ -11,8 +11,10 @@ const buzzwords = (state=[], action) => {
   }
 }
 
-const buzzword = (state={}, action) => {
+const buzzword = (state={name:'', description: '', year: '', author: ''}, action) => {
   switch(action.type) {
+    case 'SET_BUZZWORD':
+      return action.payload
     case 'CHG_NAME':
       return set(lensProp('name'), action.payload, state)
     case 'CHG_DESC':
